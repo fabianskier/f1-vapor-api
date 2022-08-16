@@ -13,9 +13,8 @@ public func configure(_ app: Application) throws {
     app.migrations.add(CreateTeam())
     
     // run migration programaticatelly
-    if app.environment == .development {
-        try app.autoMigrate().wait()
-    }
+    try app.autoMigrate().wait()
+
     // register routes
     try routes(app)
     
